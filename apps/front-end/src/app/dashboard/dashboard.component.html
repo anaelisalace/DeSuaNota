@@ -1,23 +1,10 @@
 <project-cards></project-cards>
 
-
-<div class="grid-container">
-  <mat-grid-list cols="4" rowHeight="240px" gutterSize="300px">
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
-
-      <mat-card class="table-card">
-        <project-table></project-table>
-
-      </mat-card>
-    </mat-grid-tile>
-
-    <mat-grid-tile [colspan]="2">
-
-      <mat-card class="table-card">
-        <project-table></project-table>
-
-      </mat-card>
-    </mat-grid-tile>
-
-  </mat-grid-list>
+<div class="grid two-column">
+  <mat-card class="table-card">
+    <project-table></project-table>
+  </mat-card>
+  <mat-card class="table-card">
+    <project-table></project-table>
+  </mat-card>
 </div>

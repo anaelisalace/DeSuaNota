@@ -1,5 +1,21 @@
 :host {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+
+  .grid {
+    margin: 15px 0;
     display: flex;
-    flex-direction: column;
-    padding: 20px;
+    flex-flow: row wrap;
+    column-gap: 15px;
+    row-gap: 15px;
+
+    .table-card {
+      // flex: 1;
+      flex-basis: 100%;
+      @media (min-width: 768px) {
+        flex-basis: calc(50% - 40px);
+      }
+    }
+  }
 }

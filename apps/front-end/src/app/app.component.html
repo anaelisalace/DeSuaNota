@@ -6,7 +6,7 @@
     <!--
       Botão que abre e fecha a navegação lateral
      -->
-    <button mat-icon-button (click)="snav.toggle()">
+    <button mat-icon-button (click)="lnav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
 
@@ -15,6 +15,10 @@
         Nome do app pode vir aqui
        -->
     </h1>
+
+    <button mat-icon-button (click)="rnav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
   </mat-toolbar>
 
   <mat-sidenav-container
@@ -25,7 +29,7 @@
     Navegação lateral
    -->
     <mat-sidenav
-      #snav
+      #lnav
       [mode]="mobileQuery.matches ? 'over' : 'side'"
       [fixedInViewport]="mobileQuery.matches"
       class="app-sidenav"
@@ -80,10 +84,10 @@
             {{ nav.label }}
           </span>
         </a>
-    
-    
-    
-      
+
+
+
+
       </mat-nav-list>
      <img src="/assets/logo.svg" alt="logo">
 
@@ -104,7 +108,7 @@
     Navegação lateral
    -->
    <mat-sidenav
-   #snav
+   #rnav
    [mode]="mobileQuery.matches ? 'over' : 'side'"
    [fixedInViewport]="mobileQuery.matches"
    position="end"
