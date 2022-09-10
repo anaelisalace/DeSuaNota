@@ -5,17 +5,19 @@
   "scripts": {
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2020 browser module main",
-    "start": "nx serve",
+    "start": "nx run-many --target=serve --all --parallel",
     "build": "nx build",
     "test": "nx test"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~14.2.0",
+    "@angular/cdk": "^14.2.1",
     "@angular/common": "~14.2.0",
     "@angular/compiler": "~14.2.0",
     "@angular/core": "~14.2.0",
     "@angular/forms": "~14.2.0",
+    "@angular/material": "^14.2.1",
     "@angular/platform-browser": "~14.2.0",
     "@angular/platform-browser-dynamic": "~14.2.0",
     "@angular/router": "~14.2.0",

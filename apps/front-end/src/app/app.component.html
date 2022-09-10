@@ -1,9 +1,166 @@
-<div style="text-align: center">
-  <h1>Welcome to front-end!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-    alt="Nx - Smart, Fast and Extensible Build System"
-  />
+<div class="app-container" [class.app-is-mobile]="mobileQuery.matches">
+  <!--
+    Barra de ferramentas superior
+   -->
+  <mat-toolbar class="app-toolbar">
+    <!--
+      Botão que abre e fecha a navegação lateral
+     -->
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <h1 class="app-app-name">
+      <!--
+        Nome do app pode vir aqui
+       -->
+    </h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container
+    class="app-sidenav-container"
+    [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+  >
+    <!--
+    Navegação lateral
+   -->
+    <mat-sidenav
+      #snav
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      class="app-sidenav"
+      fixedTopGap="56"
+      opened
+    >
+
+      <mat-nav-list class="app-nav-list ">
+        <!--
+          Cabeçalho da navegação lateral
+         -->
+        <h3 mat-subheader>DASHBOARD</h3>
+
+        <!--
+          Links de navegação da lateral
+
+          ( *ngFor ): loop pra HTML com Angular
+
+          const listaDeItens  = ['lista', 'de', 'itens']
+
+          Comum:
+          for (i = 0; i <= 3; i++) {
+            const item = listaDeItens[i]
+          }
+
+          Em templates Angular:
+          <elemento *ngFor="let item of listaDeItens">
+            {{ item }}
+          </elemento>
+         -->
+        <a
+          mat-list-item
+          class="sidenav-list-item"
+          *ngFor="let nav of navigation"
+          [routerLink]="nav.route"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="active"
+        >
+          <!--
+            Ícone ao lado do link
+           -->
+          <mat-icon matListIcon color="accent">{{ nav.icon }}</mat-icon>
+          <!--
+            Badge de bolinha com número
+            ao lado do texto
+           -->
+          <span
+            [matBadge]="nav.badge"
+            [matBadgeHidden]="!nav.badge"
+            matBadgeColor="accent"
+          >
+            {{ nav.label }}
+          </span>
+        </a>
+    
+    
+    
+      
+      </mat-nav-list>
+     <img src="/assets/logo.svg" alt="logo">
+
+    </mat-sidenav>
+    <!--
+      Elemento que comporta os
+      principais conteúdos
+     -->
+    <main mat-sidenav-content>
+      <!--
+        Entrada pra troca de páginas
+        👇
+       -->
+      <router-outlet></router-outlet>
+    </main>
+
+        <!--
+    Navegação lateral
+   -->
+   <mat-sidenav
+   #snav
+   [mode]="mobileQuery.matches ? 'over' : 'side'"
+   [fixedInViewport]="mobileQuery.matches"
+   position="end"
+   class="app-sidenav"
+   fixedTopGap="56"
+   opened
+ >
+   <mat-nav-list class="app-nav-list mat-elevation-z2">
+     <!--
+       Cabeçalho da navegação lateral
+      -->
+     <h3 mat-subheader>DASHBOARD</h3>
+
+     <!--
+       Links de navegação da lateral
+
+       ( *ngFor ): loop pra HTML com Angular
+
+       const listaDeItens  = ['lista', 'de', 'itens']
+
+       Comum:
+       for (i = 0; i <= 3; i++) {
+         const item = listaDeItens[i]
+       }
+
+       Em templates Angular:
+       <elemento *ngFor="let item of listaDeItens">
+         {{ item }}
+       </elemento>
+      -->
+     <a
+       mat-list-item
+       class="sidenav-list-item"
+       *ngFor="let nav of navigation"
+       [routerLink]="nav.route"
+       [routerLinkActiveOptions]="{ exact: true }"
+       routerLinkActive="active"
+     >
+       <!--
+         Ícone ao lado do link
+        -->
+       <mat-icon matListIcon color="accent">{{ nav.icon }}</mat-icon>
+       <!--
+         Badge de bolinha com número
+         ao lado do texto
+        -->
+       <span
+         [matBadge]="nav.badge"
+         [matBadgeHidden]="!nav.badge"
+         matBadgeColor="accent"
+       >
+         {{ nav.label }}
+       </span>
+     </a>
+   </mat-nav-list>
+ </mat-sidenav>
+
+  </mat-sidenav-container>
 </div>
-<div>Message: {{ hello$ | async | json }}</div>

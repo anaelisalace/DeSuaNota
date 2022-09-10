@@ -1,0 +1,42 @@
+<div class="grid-container">
+  <mat-grid-list cols="4" rowHeight="120px" gutterSize="15px">
+    <mat-grid-tile
+      class="mat-elevation-z2"
+      *ngFor="let card of cards | async"
+      [colspan]="card.cols"
+      [rowspan]="card.rows"
+      
+    >
+      <mat-card class="dashboard-card">
+
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="more-button" aria-label="Example icon-button with a menu">
+          <mat-icon color="accent">more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>settings</mat-icon>
+            <span>Tiago</span>
+          </button>
+          <button mat-menu-item disabled>
+            <mat-icon>favorite</mat-icon>
+            <span>Ana</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Gui</span>
+          </button>
+        </mat-menu>
+        
+
+        <mat-card-header>
+          <mat-card-subtitle>
+            {{ card.title }}
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <h2>{{ card.value }}</h2>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

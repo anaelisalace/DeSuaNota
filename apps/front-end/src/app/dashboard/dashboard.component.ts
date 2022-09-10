@@ -1,12 +1,19 @@
-import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+
+export interface Tile {
+  color: string;
+  cols: number;
+  rows: number;
+  text: string;
+}
 
 @Component({
-  selector: 'project-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'project-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss'],
 })
-export class AppComponent implements OnDestroy {
+export class DashboardComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
 
@@ -15,7 +22,7 @@ export class AppComponent implements OnDestroy {
       icon: 'home',
       label: 'Home',
       route: '/',
-      badge: 0,
+      badge: 10,
     },
     {
       icon: 'chat',
