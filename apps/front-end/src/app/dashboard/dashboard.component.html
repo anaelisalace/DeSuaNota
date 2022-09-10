@@ -5,9 +5,31 @@
     <project-table></project-table>
   </mat-card>
   <mat-card class="table-card">
-    <h3 mat-card-title> Score geral de satisfação</h3>
+   <header>
+
+     <h3 mat-card-title> Score geral de satisfação</h3>
+     <button mat-icon-button [matMenuTriggerFor]="menu" class="more-button" aria-label="Example icon-button with a menu">
+       <mat-icon color="accent">more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>settings</mat-icon>
+          <span>Tiago</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>favorite</mat-icon>
+          <span>Ana</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Gui</span>
+        </button>
+      </mat-menu>
+      
+    </header>
     <div mat-card-content class="chart-card">
-      <project-pie-chart [value]="82"></project-pie-chart>
+      <project-pie-chart [value]="chartService.pieChartValue$ | async"></project-pie-chart>
+      
       <!-- <object data="/assets/chart-pizza.svg"></object> -->
     </div>
   </mat-card>

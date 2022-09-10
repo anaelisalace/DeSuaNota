@@ -38,7 +38,7 @@ import { Component, Input } from '@angular/core';
         transform: rotate(-45deg);
       }
       :host circle {
-        fill: transparent;
+        fill: transparent; 
       }
       :host var {
         position: absolute;
@@ -51,5 +51,5 @@ import { Component, Input } from '@angular/core';
 })
 export class PieChartComponent {
   @Input()
-  value = 0;
+  value:number | null = 0;
 }

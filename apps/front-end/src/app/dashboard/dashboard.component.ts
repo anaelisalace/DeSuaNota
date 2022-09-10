@@ -1,5 +1,6 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+import { ChartService } from '../shared/chart/chart.service';
 
 export interface Tile {
   color: string;
@@ -62,10 +63,16 @@ export class DashboardComponent implements OnDestroy {
     },
   ];
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(
+    readonly chartService: ChartService,
+    changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addEventListener('change', this._mobileQueryListener);
+    setTimeout(() => {
+      this.chartService.setPieChartValue(28)
+    }, 3000);  
+   
   }
 
   ngOnDestroy(): void {

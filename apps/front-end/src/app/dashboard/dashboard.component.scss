@@ -11,6 +11,17 @@
     row-gap: 15px;
 
     .table-card {
+      flex-direction: column;
+      display: flex;
+
+
+      header{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+     
       // flex: 1;
       flex-basis: 100%;
       

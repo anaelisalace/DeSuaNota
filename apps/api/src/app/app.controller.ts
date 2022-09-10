@@ -12,4 +12,10 @@ export class AppController {
   getData(): Message {
     return this.appService.getData();
   }
+
+  @Get('pie-chart')
+  getPieChart() {
+    return this.appService.getPieChartValue();
+  }
+
 }
