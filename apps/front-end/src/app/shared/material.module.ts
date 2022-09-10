@@ -8,9 +8,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
-import { TableComponent } from './table/table.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   exports: [
@@ -23,16 +25,10 @@ import { MatSortModule } from '@angular/material/sort';
     MatSidenavModule,
     MatCardModule,
     MatTableModule,
+    MatProgressSpinnerModule,
     TableComponent,
   ],
-  declarations: [
-    TableComponent
-  ],
-  imports: [
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatIconModule,
-  ],
+  declarations: [TableComponent],
+  imports: [MatTableModule, MatPaginatorModule, MatSortModule, MatIconModule],
 })
 export class SharedMaterialModule {}
