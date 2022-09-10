@@ -21,7 +21,7 @@ export class AppComponent implements OnDestroy {
       icon: 'chat',
       label: 'Mensagens',
       route: '/mensagens',
-      badge: 10,
+      badge: 48,
     },
     {
       icon: 'notifications_active',
