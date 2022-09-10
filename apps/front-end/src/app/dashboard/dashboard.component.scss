@@ -13,9 +13,18 @@
     .table-card {
       // flex: 1;
       flex-basis: 100%;
+      
       @media (min-width: 768px) {
         flex-basis: calc(50% - 40px);
+        
       }
+    }
+
+    .chart-card{
+        display: flex;
+        justify-content: flex-end;
     }
   }
 }
+
+
