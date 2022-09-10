@@ -17,8 +17,6 @@ export class CardsComponent {
           { title: 'Total de avaliados', value: `3.282`, cols: 1, rows: 1 },
           { title: 'Total de abandono', value: `38%`, cols: 1, rows: 1 },
           { title: 'Avaliações / mês', value: `7.456`, cols: 1, rows: 1 },
-          { title: 'Card 3', value: 0, cols: 1, rows: 1 },
-          { title: 'Card 4', value: 0, cols: 1, rows: 1 }
           ];
       }
 
@@ -27,8 +25,6 @@ export class CardsComponent {
         { title: 'Total de avaliados', value: `3.282`, cols: 1, rows: 1 },
         { title: 'Total de abandono', value: `38%`, cols: 1, rows: 1 },
         { title: 'Avaliações / mês', value: `7.456`, cols: 1, rows: 1 },
-        { title: 'Card 3', value: 0, cols: 2, rows: 2 },
-        { title: 'Card 4', value: 0, cols: 2, rows: 2 }
       ];
     })
   );

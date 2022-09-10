@@ -11,11 +11,13 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
+
 const routes: Routes = [{ path: '', component: DashboardComponent }];
 
 @NgModule({
   declarations: [DashboardComponent, CardsComponent],
   imports: [
+    SharedMaterialModule,
     CommonModule,
     LayoutModule,
     SharedMaterialModule,

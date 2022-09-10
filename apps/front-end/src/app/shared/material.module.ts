@@ -8,6 +8,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
+import { TableComponent } from './table/table.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   exports: [
@@ -20,6 +23,16 @@ import { MatTableModule } from '@angular/material/table';
     MatSidenavModule,
     MatCardModule,
     MatTableModule,
+    TableComponent,
+  ],
+  declarations: [
+    TableComponent
+  ],
+  imports: [
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatIconModule,
   ],
 })
 export class SharedMaterialModule {}
