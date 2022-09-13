@@ -11,11 +11,15 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ChartModule } from '../shared/chart/chart.module';
+import { EmployeeTableComponent } from './employee-table/employee-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 const routes: Routes = [{ path: '', component: DashboardComponent }];
 
 @NgModule({
-  declarations: [DashboardComponent, CardsComponent],
+  declarations: [DashboardComponent, CardsComponent, EmployeeTableComponent],
   imports: [
     SharedMaterialModule,
     ChartModule,
@@ -28,6 +32,9 @@ const routes: Routes = [{ path: '', component: DashboardComponent }];
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
 })
 export class DashboardModule {}
