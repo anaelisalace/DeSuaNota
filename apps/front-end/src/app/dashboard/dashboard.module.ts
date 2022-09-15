@@ -15,6 +15,7 @@ import { EmployeeTableComponent } from './employee-table/employee-table.componen
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { SatisfactionModule } from '../satisfaction/satisfaction.module';
 
 const routes: Routes = [{ path: '', component: DashboardComponent }];
 
@@ -23,6 +24,7 @@ const routes: Routes = [{ path: '', component: DashboardComponent }];
   imports: [
     SharedMaterialModule,
     ChartModule,
+    SatisfactionModule,
     CommonModule,
     LayoutModule,
     SharedMaterialModule,

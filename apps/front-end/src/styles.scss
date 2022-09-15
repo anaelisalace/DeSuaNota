@@ -1,6 +1,6 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use '@angular/material'as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -19,15 +19,11 @@ $front-end-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$front-end-theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $front-end-primary,
+$front-end-theme: mat.define-light-theme((color: (primary: $front-end-primary,
       accent: $front-end-accent,
       warn: $front-end-warn,
     ),
-  )
-);
+  ));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -44,11 +40,13 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   background-color: var(--background-color);
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+
 // .material-symbols-outlined {
 //   font-variation-settings:
 //   'FILL' 0,
@@ -59,9 +57,9 @@ body {
 
 
 .mat-drawer-inner-container {
-      display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
@@ -70,3 +68,23 @@ button.more-button {
   top: 5px;
   right: 10px;
 }
+
+.flex {
+  display: flex;
+}
+
+.card-transparente {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.fundo-icone {
+  background-color: #F6F6F6;
+ border-radius: 10px;
+}
+
+.titulo-tabela{
+  color: #95989D;
+  font-size:medium;
+  font-weight: 400;
+}
+
