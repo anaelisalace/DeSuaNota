@@ -9,7 +9,9 @@ export class ChartService {
   public pieChartValue$ = this._pieChartValue.asObservable()
 
 
-  constructor() { }
+  constructor() { 
+    
+  }
 
   setPieChartValue(value: number) {
     this._pieChartValue.next(value)

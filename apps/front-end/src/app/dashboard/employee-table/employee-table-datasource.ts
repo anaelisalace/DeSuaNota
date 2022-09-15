@@ -3,6 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
+import { AnimationDurations } from '@angular/material/core';
+import { createUrlTreeFromSnapshot } from '@angular/router';
 
 // TODO: Replace this with your own data model type
 export interface EmployeeTableItem {
@@ -12,16 +14,43 @@ export interface EmployeeTableItem {
   cargo: string;
   lotacao: string;
   scoreGeralEmp: string;
+  
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: EmployeeTableItem[] = [
-  {id: 1, image: 'imagem', name: 'Antônio Arantes', cargo: 'Acessor Técnico', lotacao: 'Secretaria de mobilidEmployeeade urbana', scoreGeralEmp: '92/100'},
-  {id: 2, image: 'imagem', name: 'Carlos Bittar', cargo: 'Fiscal', lotacao: 'Secretaria do meio ambiente', scoreGeralEmp: '91/100'},
-  {id: 3, image: 'imagem', name: 'Afonso Henrique', cargo: 'Professor', lotacao: 'Secretaria da educação', scoreGeralEmp: '89/100'},
-  {id: 4, image: 'imagem', name: 'Marli Conceição', cargo: 'Zeladora', lotacao: 'Secretaria da educação', scoreGeralEmp: '89/100'}
- 
-];
+  {
+    id: 1,
+    image: 'assets/antonio.png',
+    name: 'Antônio Arantes',
+    cargo: 'Acessor Técnico',
+    lotacao: 'Secretaria de mobilidade urbana',
+    scoreGeralEmp: '92/100'
+  },
+  {
+    id: 2, image: 'assets/carlos.png',
+    name: 'Carlos Bittar',
+    cargo: 'Fiscal',
+    lotacao: 'Secretaria do meio ambiente',
+    scoreGeralEmp: '91/100'
+  },
+
+  {
+    id: 3, image: 'assets/afonso.png',
+    name: 'Afonso Henrique',
+    cargo: 'Professor',
+    lotacao: 'Secretaria da educação',
+    scoreGeralEmp: '89/100'
+  },
+
+  {
+    id: 4, image: 'assets/marli.png',
+    name: 'Marli Conceição',
+    cargo: 'Zeladora',
+    lotacao: 'Secretaria da educação',
+    scoreGeralEmp: '89/100'
+  }
+]
 
 /**
  * Data source for the EmployeeTable view. This class should
@@ -30,7 +59,6 @@ const EXAMPLE_DATA: EmployeeTableItem[] = [
  */
 export class EmployeeTableDataSource extends DataSource<EmployeeTableItem> {
   data: EmployeeTableItem[] = EXAMPLE_DATA;
-  paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
 
   constructor() {
@@ -43,12 +71,15 @@ export class EmployeeTableDataSource extends DataSource<EmployeeTableItem> {
    * @returns A stream of the items to be rendered.
    */
   connect(): Observable<EmployeeTableItem[]> {
-    if (this.paginator && this.sort) {
+    if (this.sort) {
       // Combine everything that affects the rendered data into one update
       // stream for the data-table to consume.
-      return merge(observableOf(this.data), this.paginator.page, this.sort.sortChange)
+      return merge(observableOf(this.data), this.sort.sortChange)
         .pipe(map(() => {
-          return this.getPagedData(this.getSortedData([...this.data ]));
+          return this.getSortedData([...this.data])
+          // return this.getPagedData(
+          //   this.getSortedData([...this.data ])
+          // );
         }));
     } else {
       throw Error('Please set the paginator and sort on the data source before connecting.');
@@ -59,20 +90,20 @@ export class EmployeeTableDataSource extends DataSource<EmployeeTableItem> {
    *  Called when the table is being destroyed. Use this function, to clean up
    * any open connections or free any held resources that were set up during connect.
    */
-  disconnect(): void {}
+  disconnect(): void { }
 
   /**
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getPagedData(data: EmployeeTableItem[]): EmployeeTableItem[] {
-    if (this.paginator) {
-      const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
-      return data.splice(startIndex, this.paginator.pageSize);
-    } else {
-      return data;
-    }
-  }
+  // private getPagedData(data: EmployeeTableItem[]): EmployeeTableItem[] {
+  //   if (this.paginator) {
+  //     const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
+  //     return data.splice(startIndex, this.paginator.pageSize);
+  //   } else {
+  //     return data;
+  //   }
+  // }
 
   /**
    * Sort the data (client-side). If you're using server-side sorting,
