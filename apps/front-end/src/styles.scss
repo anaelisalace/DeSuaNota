@@ -33,9 +33,17 @@ $front-end-theme: mat.define-light-theme((color: (primary: $front-end-primary,
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-  --background-color: #B9DDE3;
+  // --background-color: #B9DDE3;
 }
 
+body{
+  background-image: url(assets/background.svg);
+  // background-repeat: no-repeat;
+  background-position: right;
+  background-attachment: fixed;
+
+  
+}
 html,
 body {
   height: 100%;
