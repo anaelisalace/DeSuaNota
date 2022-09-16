@@ -16,71 +16,29 @@
        -->
     </h1>
 
-    <button mat-icon-button (click)="rnav.toggle()">
+    <!-- <button mat-icon-button (click)="rnav.toggle()">
       <mat-icon>menu</mat-icon>
-    </button>
+    </button> -->
   </mat-toolbar>
 
-  <mat-sidenav-container
-    class="app-sidenav-container"
-    [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
-  >
+  <mat-sidenav-container class="app-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <!--
     Navegação lateral
    -->
-    <mat-sidenav
-      #lnav
-      [mode]="mobileQuery.matches ? 'over' : 'side'"
-      [fixedInViewport]="mobileQuery.matches"
-      class="app-sidenav"
-      fixedTopGap="56"
-      opened
-    >
+    <mat-sidenav #lnav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      class="app-sidenav" fixedTopGap="56" opened>
 
       <mat-nav-list class="app-nav-list ">
-        <!--
-          Cabeçalho da navegação lateral
-         -->
+       
         <h3 mat-subheader>DASHBOARD</h3>
 
-        <!--
-          Links de navegação da lateral
-
-          ( *ngFor ): loop pra HTML com Angular
-
-          const listaDeItens  = ['lista', 'de', 'itens']
-
-          Comum:
-          for (i = 0; i <= 3; i++) {
-            const item = listaDeItens[i]
-          }
-
-          Em templates Angular:
-          <elemento *ngFor="let item of listaDeItens">
-            {{ item }}
-          </elemento>
-         -->
-        <a
-          mat-list-item
-          class="sidenav-list-item"
-          *ngFor="let nav of navigation"
-          [routerLink]="nav.route"
-          [routerLinkActiveOptions]="{ exact: true }"
-          routerLinkActive="active"
-        >
-          <!--
-            Ícone ao lado do link
-           -->
+  
+        <a mat-list-item class="sidenav-list-item" *ngFor="let nav of navigation" [routerLink]="nav.route"
+          [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active">
+        
           <mat-icon matListIcon color="accent">{{ nav.icon }}</mat-icon>
-          <!--
-            Badge de bolinha com número
-            ao lado do texto
-           -->
-          <span
-            [matBadge]="nav.badge"
-            [matBadgeHidden]="!nav.badge"
-            matBadgeColor="accent"
-          >
+        
+          <span [matBadge]="nav.badge" [matBadgeHidden]="!nav.badge" matBadgeColor="accent">
             {{ nav.label }}
           </span>
         </a>
@@ -89,82 +47,78 @@
 
 
       </mat-nav-list>
-     <img src="/assets/logo.svg" alt="logo">
+      <img src="/assets/logo.svg" alt="logo">
 
     </mat-sidenav>
-    <!--
-      Elemento que comporta os
-      principais conteúdos
-     -->
+  
     <main mat-sidenav-content>
-      <!--
-        Entrada pra troca de páginas
-        👇
-       -->
+    
       <router-outlet></router-outlet>
     </main>
 
-        <!--
-    Navegação lateral
-   -->
-   <mat-sidenav
-   #rnav
-   [mode]="mobileQuery.matches ? 'over' : 'side'"
-   [fixedInViewport]="mobileQuery.matches"
-   position="end"
-   class="app-sidenav"
-   fixedTopGap="56"
-   opened
- >
-   <mat-nav-list class="app-nav-list mat-elevation-z2">
-     <!--
-       Cabeçalho da navegação lateral
-      -->
-     <h3 mat-subheader>DASHBOARD</h3>
+<!-- 
+    <mat-sidenav #rnav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      position="end" class="app-sidenav" fixedTopGap="56" opened>
+      <mat-nav-list class="app-nav-list ">
+     
 
-     <!--
-       Links de navegação da lateral
 
-       ( *ngFor ): loop pra HTML com Angular
+        <div class="container-perfil">
+          
+          <div class="container__column">
+          
+            <div class="flex icone-perfil">
+              <mat-icon color="accent">search</mat-icon>
+              <mat-icon color="accent">search</mat-icon>
+              <mat-icon color="accent">search</mat-icon>
+              <mat-icon color="accent">search</mat-icon>
+            </div>
 
-       const listaDeItens  = ['lista', 'de', 'itens']
+            <div class="imagem-perfil">
+              <img src="/assets/antonio-perfil.png" alt="">
+            </div>
 
-       Comum:
-       for (i = 0; i <= 3; i++) {
-         const item = listaDeItens[i]
-       }
+            <mat-card-subtitle style="color: #FE6A01;"> <b>Antonio Arantes</b></mat-card-subtitle>
+            <mat-card-subtitle> Secretaria de <br> mobilidade urbana</mat-card-subtitle>
 
-       Em templates Angular:
-       <elemento *ngFor="let item of listaDeItens">
-         {{ item }}
-       </elemento>
-      -->
-     <a
-       mat-list-item
-       class="sidenav-list-item"
-       *ngFor="let nav of navigation"
-       [routerLink]="nav.route"
-       [routerLinkActiveOptions]="{ exact: true }"
-       routerLinkActive="active"
-     >
-       <!--
-         Ícone ao lado do link
-        -->
-       <mat-icon matListIcon color="accent">{{ nav.icon }}</mat-icon>
-       <!--
-         Badge de bolinha com número
-         ao lado do texto
-        -->
-       <span
-         [matBadge]="nav.badge"
-         [matBadgeHidden]="!nav.badge"
-         matBadgeColor="accent"
-       >
-         {{ nav.label }}
-       </span>
-     </a>
-   </mat-nav-list>
- </mat-sidenav>
+            <div class="funcao-perfil">
 
-  </mat-sidenav-container>
-</div>
+
+
+              <mat-icon color="accent">more_vert</mat-icon>
+
+              <p>Funcão: Acessor Técnico
+              <br>Matrícula: 6789217
+              <br> Data de contratação: 28/06/1978
+              <br>Telefone: (44) 99974 8476</p>
+
+
+            </div>
+            <div class="flex">
+
+              <h4>Todos</h4>
+              <mat-icon color="black">expand_more</mat-icon>
+            </div>
+
+            <mat-card class="card-perfil">
+              <mat-icon color="accent">search</mat-icon>
+              <mat-card-subtitle> Geral </mat-card-subtitle>
+            </mat-card>
+
+            <mat-card-subtitle>Comentários</mat-card-subtitle>
+
+
+            <div class="container-comentario">
+           
+              <div class="container__feature">
+                <mat-card-title> Leonardo</mat-card-title>
+                <mat-card-subtitle> 20 junho de 2022</mat-card-subtitle>
+              </div>
+              <div class="container__image">
+                <img src="/assets/leonardo.png" alt="">
+                <p>
+                  Tirou todas as minhas dúvidas e o atendimento foi rápido.
+                </p>
+              </div>
+
+            </div> -->
