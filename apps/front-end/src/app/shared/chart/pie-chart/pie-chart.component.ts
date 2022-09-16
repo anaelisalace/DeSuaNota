@@ -19,7 +19,7 @@ import { Component, Input } from '@angular/core';
           r="16"
           [attr.stroke-dasharray]="value + ' 100'"
           stroke-dashoffset="0"
-          stroke="orange"
+          stroke=#FF6B02
         ></circle>
       </g>
     </svg>
