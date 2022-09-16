@@ -10,42 +10,43 @@
     column-gap: 15px;
     row-gap: 15px;
 
-    .table-card, 
+    .table-card,
     .card-container {
       flex-direction: column;
       display: flex;
 
 
-      header{
+      header {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
       }
 
-     
+
       // flex: 1;
       flex-basis: 100%;
-      
+
       @media (min-width: 768px) {
         flex-basis: calc(50% - 40px);
-        
+
       }
     }
 
-  
-    .chart-card{
-        display: flex;
-        justify-content: flex-end;
-        
+
+    .chart-card {
+      display: flex;
+      justify-content: flex-end;
+
     }
   }
 }
 
-.card-container{
+.card-container {
   display: flex;
   flex-direction: column;
 
-  header{
+
+  header {
     display: flex;
     justify-content: space-between;
   }
@@ -55,7 +56,18 @@
   padding: 5px;
 }
 
-.cor-fonte{
+.cor-fonte {
   color: #95989D;
 }
 
+.tres{
+  flex-grow: 3;
+}
+
+.um{
+  flex-grow: 1;
+}
+
+.dois{ 
+  flex-grow: 2;
+}

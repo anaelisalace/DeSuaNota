@@ -6,10 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedMaterialModule } from './shared/material.module';
 import { AppRouting } from './app.routing';
-import { GridListComponent } from './grid-list/grid-list.component';
+
 
 @NgModule({
-  declarations: [AppComponent, GridListComponent],
+  declarations: [AppComponent],
   imports: [
     AppRouting,
     BrowserModule,

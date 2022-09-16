@@ -80,7 +80,10 @@ button.more-button {
 .fundo-icone {
 background-color: #F6F6F6;
  border-radius: 10px;
+ padding: 5px;
 }
+
+
 
 .titulo-tabela{
   color: #95989D;
@@ -104,4 +107,16 @@ background-color: #F6F6F6;
 .space-betwewn{
   justify-content: space-between;
   margin: 0px;
+}
+
+.score-tabela {
+  font-size: larger;
+  font-weight: 600;
+  color: #2B1717;
+}
+
+.nome-tabela {
+  font-size: larger;
+  font-weight: 400;
+  color: #171F2B;
 }
