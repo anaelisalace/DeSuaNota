@@ -30,22 +30,22 @@
       <header>
 
         <h3 mat-card-title> Score geral de satisfação</h3>
-        <button mat-icon-button [matMenuTriggerFor]="menu" class="more-button"
-          aria-label="Example icon-button with a menu">
+
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="more-button" aria-label="Example icon-button with a menu">
           <mat-icon color="accent">more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
           <button mat-menu-item>
             <mat-icon>settings</mat-icon>
-            <span>Tiago</span>
-          </button>
-          <button mat-menu-item disabled>
-            <mat-icon>favorite</mat-icon>
-            <span>Ana</span>
+            <span>Configurar</span>
           </button>
           <button mat-menu-item>
-            <mat-icon>notifications_off</mat-icon>
-            <span>Gui</span>
+            <mat-icon>favorite</mat-icon>
+            <span>Favoritar</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>add</mat-icon>
+            <span>Adicionar</span>
           </button>
         </mat-menu>
 
@@ -62,22 +62,117 @@
 </div>
 
 
-<div>
-  <h3><b>Órgãos</b> </h3>
-  <div class="flex">
+<div class="flex space-betwewn">
+  <h3><b>Servidores</b> </h3>
+  
+  <div class="flex space-betwewn">
     <h4>Todos</h4>
     <mat-icon color="black">expand_more</mat-icon>
     <mat-icon color="accent">search</mat-icon>
     <h4>Buscar</h4>
   </div>
-  <mat-card class="flex">
-    <project-employee-table></project-employee-table>
-  </mat-card>
 </div>
 
+<mat-card>
+  <project-employee-table></project-employee-table>
+</mat-card>
 
 
 
+
+<mat-grid-list cols="4" rowHeight="100px">
+
+  <div class="card-container ">
+
+    <mat-card class="card-transparente">
+
+      <header>
+       
+          
+          <div>
+            <h3 mat-card-title class="cor-fonte" > Satisfação por período</h3>
+          </div>
+
+          <div class="flex">
+            <mat-icon color="accent">calendar_today</mat-icon>
+            <h4>Ano</h4>
+            <mat-icon color="black">expand_more</mat-icon>
+          </div>
+
+       
+
+      </header>
+        <img src="assets/satisfacao.svg" alt="teste " width="100%">
+
+
+    </mat-card>
+
+  </div>
+
+  <div>
+
+    <mat-card>
+
+      <header>
+
+        <h3 mat-card-title class="cor-fonte"> Notificações</h3>
+
+        <mat-card-actions >
+
+          <div class="padding">
+            <button mat-button class="fundo-icone">
+              <mat-icon>house</mat-icon>
+            </button>
+            <button mat-button class="fundo-icone">
+              <mat-icon >directions_car</mat-icon>
+            </button>
+          </div>
+
+          <div class="padding">
+            <button mat-button class="fundo-icone">
+              <mat-icon>call</mat-icon>
+            </button>
+            <button mat-button class="fundo-icone">
+              <mat-icon>flight</mat-icon>
+            </button>
+
+          </div>
+
+        </mat-card-actions>
+
+
+
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="more-button"
+          aria-label="Example icon-button with a menu">
+          <mat-icon color="accent">more_vert</mat-icon>
+        </button>
+
+      </header>
+
+    </mat-card>
+
+  </div>
+
+
+</mat-grid-list>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
 <div class="grid two-column">
 
   <div class="card-container ">
@@ -151,4 +246,4 @@
 
   </div>
 
-</div>
+</div> -->

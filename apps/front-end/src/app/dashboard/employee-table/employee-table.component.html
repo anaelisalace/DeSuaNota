@@ -53,6 +53,10 @@
   <ng-container matColumnDef="options">
     <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
     <td mat-cell *matCellDef="let row">
+      
+
+
+
       <button mat-icon-button [matMenuTriggerFor]="menu"
         aria-label="Example icon-button with a menu">
         <mat-icon  color="accent">more_vert</mat-icon>
@@ -60,15 +64,15 @@
       <mat-menu #menu="matMenu">
         <button mat-menu-item>
           <mat-icon>settings</mat-icon>
-          <span>Tiago</span>
-        </button>
-        <button mat-menu-item disabled>
-          <mat-icon>favorite</mat-icon>
-          <span>Ana</span>
+          <span>Configurar</span>
         </button>
         <button mat-menu-item>
-          <mat-icon>notifications_off</mat-icon>
-          <span>Gui</span>
+          <mat-icon>favorite</mat-icon>
+          <span>Favoritar</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>add</mat-icon>
+          <span>Adicionar</span>
         </button>
       </mat-menu>
 

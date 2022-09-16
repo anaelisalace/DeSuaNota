@@ -78,7 +78,7 @@ button.more-button {
 }
 
 .fundo-icone {
-  background-color: #F6F6F6;
+background-color: #F6F6F6;
  border-radius: 10px;
 }
 
@@ -88,3 +88,20 @@ button.more-button {
   font-weight: 400;
 }
 
+.title-erro {
+  border-bottom: 1px solid rgba(255, 166, 0, 0.409);
+  padding-bottom: 0.75rem;
+}
+
+.text-center-erro {
+  text-align: center;
+}
+
+.mensagem-erro{
+  padding: 1rem;
+}
+
+.space-betwewn{
+  justify-content: space-between;
+  margin: 0px;
+}
